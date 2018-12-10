@@ -12,25 +12,25 @@ namespace EducationProject
     using System;
     using System.Collections.Generic;
     
-    public partial class Program
+    public partial class Teacher
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Program()
+        public Teacher()
         {
             this.Groups = new HashSet<Group>();
-            this.Mentors = new HashSet<Mentor>();
-            this.Teachers = new HashSet<Teacher>();
         }
     
+        public int TeacherId { get; set; }
         public int ProgramId { get; set; }
-        public string ProgramName { get; set; }
-        public Nullable<int> ProgramDuration { get; set; }
+        public string TeacherName { get; set; }
+        public string TeacherSurname { get; set; }
+        public string TeacherEmail { get; set; }
+        public string TeacherPhone { get; set; }
+        public string TeacherBio { get; set; }
+        public string TeacherPhoto { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Group> Groups { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Mentor> Mentors { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Teacher> Teachers { get; set; }
+        public virtual Program Program { get; set; }
     }
 }

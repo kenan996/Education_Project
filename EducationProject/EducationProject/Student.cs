@@ -12,25 +12,26 @@ namespace EducationProject
     using System;
     using System.Collections.Generic;
     
-    public partial class Program
+    public partial class Student
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Program()
+        public Student()
         {
-            this.Groups = new HashSet<Group>();
-            this.Mentors = new HashSet<Mentor>();
-            this.Teachers = new HashSet<Teacher>();
+            this.Tasks = new HashSet<Task>();
         }
     
-        public int ProgramId { get; set; }
-        public string ProgramName { get; set; }
-        public Nullable<int> ProgramDuration { get; set; }
+        public int StudentId { get; set; }
+        public int GroupId { get; set; }
+        public string StudentName { get; set; }
+        public string StudentSurname { get; set; }
+        public Nullable<System.DateTime> StudentBirthDate { get; set; }
+        public string StudentEmail { get; set; }
+        public string StudentPhone { get; set; }
+        public Nullable<System.DateTime> StudentRegistrationDate { get; set; }
+        public string StudentPhoto { get; set; }
     
+        public virtual Group Group { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Group> Groups { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Mentor> Mentors { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Teacher> Teachers { get; set; }
+        public virtual ICollection<Task> Tasks { get; set; }
     }
 }
